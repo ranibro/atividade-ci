@@ -1,0 +1,17 @@
+name: Primeiro Workflow
+
+on:
+  push:
+jobs:
+  segundo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Segundo passo"
+      - name: variavel CURSO
+        run: echo "CURSO=Integração Contínua" >> $GITHUB_ENV
+      - name: nome do curso
+        run: echo "O nome do curso é ${{ env.CURSO }}."
+      - name: usuario que executou
+        run: echo "${{ github.actor }}."
+      - name: nome do repositório
+        run: echo "${{ github.repository }}."

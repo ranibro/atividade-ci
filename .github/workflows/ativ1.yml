@@ -20,5 +20,5 @@ jobs:
       - name: conteúdo do arquivo README.md
         run: cat README.md
       - name: Lista arquivos
-        run: ls ${{ github.workspace }}
-      
+        run: ls -la
+
