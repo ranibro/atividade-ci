@@ -1,14 +1,23 @@
-name: Terceiro Workflow
+name: Quarto Workflow
 
 on:
   push:
 jobs:
-  terceiro-job:
+  quarto-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Terceiro passo"
+      - run: echo "Quarto passo"
       - name: Checkout
         uses: actions/checkout@v5
+      - name: Data e hora
+        run: date
+      - name: Versão do git
+        run: git --version
+  quinto-job:
+    runs-on: ubuntu-latest
+    needs: quarto-job
+    steps:
+      - run: echo "Quinto passo"
       - name: validação do arquivo README.md
         run: |
           if [ -f README.md ]; then
