@@ -18,6 +18,8 @@ jobs:
     needs: quarto-job
     steps:
       - run: echo "Quinto passo"
+      - name: Checkout
+        uses: actions/checkout@v5
       - name: validação do arquivo README.md
         run: |
           if [ -f README.md ]; then
