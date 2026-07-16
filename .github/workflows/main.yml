@@ -9,8 +9,16 @@ jobs:
       - run: echo "Primeiro passo"
       - name: Checkout
         uses: actions/checkout@v5
-      - name: Lista arquivos
-        run: ls ${{ github.workspace }}
       - name: Status
         run: echo "Status ${{ job.status }}."
+      - name: Data e hora
+        run: date
+      - name: Sistema Operacional
+        run: uname -a
+      - name: Versão do git
+        run: git --version
+      - name: conteúdo do arquivo README.md
+        run: cat README.md
+      - name: Lista arquivos
+        run: ls ${{ github.workspace }}
       
