@@ -1,4 +1,4 @@
-name: Primeiro Workflow
+name: Segundo Workflow
 
 on:
   push:
@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Segundo passo"
+      - name: Checkout
+        uses: actions/checkout@v5
       - name: variavel CURSO
         run: echo "CURSO=Integração Contínua" >> $GITHUB_ENV
       - name: nome do curso
@@ -15,3 +17,5 @@ jobs:
         run: echo "${{ github.actor }}."
       - name: nome do repositório
         run: echo "${{ github.repository }}."
+      - name: nome da branch
+        run: echo "${{ github.ref }}."

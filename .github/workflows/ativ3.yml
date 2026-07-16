@@ -1,0 +1,32 @@
+name: Terceiro Workflow
+
+on:
+  push:
+jobs:
+  terceiro-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Terceiro passo"
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: validação do arquivo README.md
+        run: |
+          if [ -f README.md ]; then
+            echo "OK"
+          else
+            exit 1
+          fi
+      - name: validação do arquivo license
+        run: |
+          if [ -f license ]; then
+            echo "OK"
+          else
+            exit 1
+          fi
+      - name: validação do arquivo .gitignore
+        run: |
+          if [ -f .gitignore ]; then
+            echo "OK"
+          else
+            exit 1
+          fi
